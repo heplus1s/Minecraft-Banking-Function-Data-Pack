@@ -1,0 +1,6 @@
+{
+  "pack": {
+    "pack_format": 15,
+    "description": "Bank UI8 FIX — 差额驱动汇率 + 可配权重 + 实时账本 + NBT修复（MC 1.20.1）"
+  }
+}
