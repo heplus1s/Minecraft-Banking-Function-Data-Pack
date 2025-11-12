@@ -12,7 +12,7 @@ Banking datapack for survival/server economy: **dual currency** (copper/diamond)
 
 ---
 
-## ✨ Features / 功能（与当前版本一致）
+## ✨ Features / 功能
 - **Dual currency**：copper & diamond / 铜与钻双币种  
 - **Dynamic exchange rate**（差额驱动）：基于准备金与账面差额（`#ALPHA_C/#ALPHA_D`）并在 `[RMIN, RMAX]` 内夹紧  
 - **GUI**：
@@ -45,7 +45,7 @@ Banking datapack for survival/server economy: **dual currency** (copper/diamond)
 
 ---
 
-## ⚙️ Configuration / 配置（记分板变量，与实现一致）
+## ⚙️ Configuration / 配置
 ```mcfunction
 # 费率（%），默认 2（load 中已自动设为 2，存在时不覆盖）
 /scoreboard players set #FEE bank_fee 2
