@@ -16,14 +16,12 @@ Banking datapack for survival/server economy: **dual currency** (copper/diamond)
 - **Dual currency**：copper & diamond / 铜与钻双币种  
 - **Dynamic exchange rate**（差额驱动）：基于准备金与账面差额（`#ALPHA_C/#ALPHA_D`）并在 `[RMIN, RMAX]` 内夹紧  
 - **GUI**：
-  - 存入：**顶排第 2 槽**放入铜锭/钻石即可入账  
+  - 存入：**顶排第 3 格**放入铜锭/钻石即可入账  
   - 兑换：**买入/卖出钻石**按钮位于第 2/3 排（槽 9–14、18–23），支持 **×1/×10/×64/×100/×1000/×10000**  
   - 取款：铜与钻各提供 **×1/×10/×64**（槽 15–17、24–26）  
-  - 顶排第 8 槽为**关闭**按钮  
+  - 顶排第 8 槽为**关闭**按钮 （有bug未修复，直接esc退出）
 - **Fees**：交易费率 `#FEE`（默认 2%）  
 - **Hooks**：自动 `load`/`tick`，清理 GUI 掉落物与离开范围的界面
-
-> 注：本版本**未包含**“管理员面板/查询指令集合”，参数调整通过记分板变量完成（见下）。
 
 ---
 
@@ -37,13 +35,13 @@ Banking datapack for survival/server economy: **dual currency** (copper/diamond)
 ## 🚀 Open the GUI / 打开界面
 - 服务器玩家（无 OP）：
   ```
-  /trigger bankGUI set 1
+  /trigger bankGUI
   ```
 - 管理员/OP 亦可直接：
   ```
   /function bank:open
   ```
-进入后按界面提示操作（顶排 2 槽存入；第 2 排买入钻石；第 3 排卖出钻石；15–17/24–26 为取款；8 为关闭）。
+进入后按界面提示操作（顶排 2 槽存入；第 2 排买入钻石；第 3 排卖出钻石；15–17/24–26 为取款）。
 
 ---
 
@@ -78,17 +76,17 @@ Banking datapack for survival/server economy: **dual currency** (copper/diamond)
 ---
 
 ## 🧰 Uninstall / 卸载
-1. 退出所有玩家的 GUI（顶排 8 槽关闭或离开范围自动清理）  
+1. 退出所有玩家的 GUI（离开范围自动清理）  
 2. 从 `world/datapacks/` 移除数据包并 `/reload`
 
 ---
 
 ## ❓ FAQ / 常见问题
 **Q：存款是按钮吗？**  
-A：不是。把铜锭/钻石放入**顶排第 2 槽**即会入账。
+A：不是。把铜锭/钻石放入**顶排第 3 格**即会入账。
 
 **Q：为什么没有 100/1000/10000 的取款按钮？**  
-A：当前版本仅提供 **×1/×10/×64** 取款。大额可多次操作或由管理员添加扩展按钮。
+A：当前版本仅提供 **×1/×10/×64** 取款。
 
 **Q：如何固定汇率？**  
 A：把定时/触发的漂移逻辑关闭（本版本默认无定时漂移），或直接设定 `#rate` 并保持 `ALPHA_*` 为 0；也可通过上下限夹紧到定值。
