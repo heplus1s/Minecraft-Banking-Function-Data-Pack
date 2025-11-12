@@ -1,0 +1,1 @@
+function bank:gui/cleanup
